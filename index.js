@@ -90,7 +90,7 @@ const sellStock = () => {
 // Calculate Moving Average
 const calculateMovingAverage = (prices, period) => {
     const sum = prices.slice(-period).reduce((acc, price) => acc + price, 0);
-    return sum / period;
+    return Math.round((sum / period), 2);
 }
 
 // Trade based on moving averages
@@ -114,7 +114,7 @@ const tradeBasedOnMovingAverage = (stockPrices) => {
 }
 
 // Call fetchStockData every 10 seconds
-const stockDataInterval = setInterval(fetchStockData, 5000);
+const stockDataInterval = setInterval(fetchStockData, 10000);
 
 // Stop fetching stock data after 2 minutes
 setTimeout(() => {
@@ -130,4 +130,4 @@ setTimeout(() => {
           }
     });
     console.log(`\nFinal Balance: $${balance.toFixed(2)}`);
-}, 60000);
+}, 180000);
