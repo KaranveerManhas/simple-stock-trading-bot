@@ -60,7 +60,7 @@ This project is a simple trading bot simulator built with Node.js. It simulates 
     - Returns the current stock data
 
 ### Sample response
-    ```json
+    ```
     [
         {
             "symbol": "AAPL",
