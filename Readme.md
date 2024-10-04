@@ -60,7 +60,7 @@ This project is a simple trading bot simulator built with Node.js. It simulates 
     - Returns the current stock data
 
 ### Sample response
-    ```
+    
     [
         {
             "symbol": "AAPL",
@@ -75,10 +75,12 @@ This project is a simple trading bot simulator built with Node.js. It simulates 
             "trend": 1
         }
     ]
-    ```
+
 ### Trading Logic
 - The trading bot uses a simple moving average crossover strategy to determine whether to buy or sell a stock. 
-- Buy Signal
+    - Buy Signal: Occurs when the short-term moving average crosses above the long-term moving average (often referred to as a "bullish crossover"). This suggests a potential upward trend.
+    - Sell Signal: Occurs when the short-term moving average crosses below the long-term moving average (a "bearish crossover"), indicating a potential downward trend.
+
 The bot checks the stock price every 10 seconds and executes trades based on the conditions outlined.
 
 ### Profit/Loss Tracking
