@@ -2,9 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// app.use(express.json());
-
-const stockData = [
+let stockData = [
     {
         symbol: "AAPL",
         currentPrice: 150,
@@ -17,13 +15,8 @@ const stockData = [
 ];
 
 setInterval(() => {
-    stockData[0].currentPrice += Math.random() * 5 - 2.5;
-    stockData[0].open += Math.random() * 2 - 1;
-    stockData[0].high += Math.random() * 3 - 1.5;
-    stockData[0].low += Math.random() * 1.5 - 0.75;
-    stockData[0].volume += Math.random() * 10000 - 5000;
-    stockData[0].peRatio += Math.random() * 0.5 - 0.25;
- }, 10000);
+    stockData[0].currentPrice += (Math.random() - 0.5) * 10;
+ }, 1000);
 
 app.get('/getStock', (req, res) => {
     console.log("Data sent");
